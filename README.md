@@ -18,3 +18,7 @@ VideoLinks:
   PART5: https://www.youtube.com/watch?v=8NwKW3VEKKY
   
   PART6: https://www.youtube.com/watch?v=D2bJ60CKS3c
+
+  PART7: https://www.youtube.com/watch?v=GY3EQCjxwG4
+  
+  PART8: https://www.youtube.com/watch?v=8gMd0ftWp_Y
