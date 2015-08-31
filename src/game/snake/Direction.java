@@ -1,5 +1,5 @@
 
-package game.snake.canvas;
+package game.snake;
 
 /**
  *

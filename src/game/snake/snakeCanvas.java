@@ -1,4 +1,4 @@
-package game.snake.canvas;
+package game.snake;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -103,7 +103,7 @@ public class snakeCanvas extends Canvas implements Runnable, KeyListener {
             endGameGraphics.drawString("You lost. Boo hoo.", this.getPreferredSize().width / 2, this.getPreferredSize().height / 2);
         }
 
-        endGameGraphics.drawString("Your score: ", this.getPreferredSize().width / 2, (this.getPreferredSize().height / 2) + 20);
+        endGameGraphics.drawString("Your score: " + score, this.getPreferredSize().width / 2, (this.getPreferredSize().height / 2) + 20);
         endGameGraphics.drawString("Press \"space\" to start a new game!", this.getPreferredSize().width / 2, (this.getPreferredSize().height / 2) + 40);
 
         g.drawImage(endGameImage, 0, 0, this);
@@ -236,8 +236,8 @@ public class snakeCanvas extends Canvas implements Runnable, KeyListener {
     }
 
     public void DrawScore(Graphics g) {
-        g.drawString("Score: " + score, 0, GRID_HEIGHT_RATIO + 10);
-        g.drawString("Hightscore: " + highScore, 0, GRID_HEIGHT_RATIO + 20);
+        g.drawString("Score: " + score, 0, GRID_HEIGHT_RATIO + 20);
+        g.drawString("Hightscore: " + highScore, 0, GRID_HEIGHT_RATIO + 35);
     }
 
     public void CheckScore() {
@@ -246,7 +246,7 @@ public class snakeCanvas extends Canvas implements Runnable, KeyListener {
             return;
         }
 
-        if (score > Integer.parseInt(highScore.split(":")[1])) {
+        if (score > Integer.parseInt((highScore.split(":")[1]))) {
             String name = JOptionPane.showInputDialog("You set a new highscore. What is your name?");
             highScore = name + ":" + score;
 
@@ -292,14 +292,14 @@ public class snakeCanvas extends Canvas implements Runnable, KeyListener {
         g.drawRect(0, 0, GRID_WIDTH_RATIO, GRID_HEIGHT_RATIO); // starts with zero zero, how big 
 
         // drawing the vertical lines
-        for (int x = BOX_WIDTH; x < GRID_WIDTH_RATIO; x += BOX_WIDTH) {
-            g.drawLine(x, 0, x, GRID_HEIGHT_RATIO);
-        }
-
-        //drawing the horizontal lines
-        for (int y = BOX_HEIGHT; y < GRID_HEIGHT_RATIO; y += BOX_HEIGHT) {
-            g.drawLine(0, y, GRID_WIDTH_RATIO, y);
-        }
+//        for (int x = BOX_WIDTH; x < GRID_WIDTH_RATIO; x += BOX_WIDTH) {
+//            g.drawLine(x, 0, x, GRID_HEIGHT_RATIO);
+//        }
+//
+//        //drawing the horizontal lines
+//        for (int y = BOX_HEIGHT; y < GRID_HEIGHT_RATIO; y += BOX_HEIGHT) {
+//            g.drawLine(0, y, GRID_WIDTH_RATIO, y);
+//        }
 
     }
 
@@ -374,7 +374,7 @@ public class snakeCanvas extends Canvas implements Runnable, KeyListener {
             return reader.readLine();
 
         } catch (Exception e) {
-            return "Nobody: 0";
+            return "Nobody:0";
         } finally {
             try {
                 // executes after finish
@@ -390,7 +390,6 @@ public class snakeCanvas extends Canvas implements Runnable, KeyListener {
 
     @Override
     public void keyTyped(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -439,6 +438,5 @@ public class snakeCanvas extends Canvas implements Runnable, KeyListener {
 
     @Override
     public void keyReleased(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

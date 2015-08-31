@@ -1,7 +1,9 @@
+package game.snake;
 
 
 
-import game.snake.canvas.snakeCanvas;
+
+import game.snake.snakeCanvas;
 import java.applet.Applet;
 import java.awt.Dimension;
 import java.awt.Graphics;
