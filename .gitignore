@@ -16,3 +16,13 @@ hs_err_pid*
 nbproject/
 /build/
 /dist/
+
+#build files
+applet.policy
+build.xml
+manifest.mf
+master-applet.jnlp
+master-application.jnlp
+nbbuild.xml
+preview-applet.html
+preview-application.html
